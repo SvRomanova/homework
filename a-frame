@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
+  </head>
+  <body>
+    <a-scene physics="debug: true">
+      <!-- Приземлена площина з текстурою для ґрунту -->
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" material="src: #groundTexture" static-body></a-plane>
+      
+      <!-- Текстура неба з пейзажем -->
+      <a-sky src="https://st3.depositphotos.com/1031174/12522/i/450/depositphotos_125225762-stock-photo-clouds-in-sky.jpg"></a-sky>
+
+      <!-- Додана камера -->
+      <a-entity camera look-controls wasd-controls position="0 2 0"></a-entity>
+
+      <!-- Дерево -->
+      <a-entity position="-5 2 -6">
+        <!-- Зелена сфера -->
+        <a-sphere radius="1" color="#2ECC71"></a-sphere>
+        <!-- Стовбур дерева -->
+        <a-cylinder position="0 -2 0" radius="0.5" height="4" color="#8B4513" static-body></a-cylinder>
+      </a-entity>
+
+      <!-- Камінь -->
+      <a-sphere position="2 0.5 -7" radius="1" color="brown" static-body></a-sphere>
+
+      <!-- Річка -->
+      <a-cylinder position="0 -0.5 -4" radius="5" height="0.2" color="#3498DB" static-body></a-cylinder>
+
+      <!-- Додано текстуру для ґрунту -->
+      <a-assets>
+        <img id="groundTexture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSirbFUVF2moVIdlw2sNfIypUF841Ntn7wAqUGsyUkS&s">
+      </a-assets>
+    </a-scene>
+  </body>
+</html>
